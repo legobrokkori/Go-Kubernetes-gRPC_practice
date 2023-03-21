@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     name: Test
+    environment: dev
     runs-on: ubuntu-latest
     services:
       postgres:
