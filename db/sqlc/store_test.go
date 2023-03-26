@@ -7,10 +7,12 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/require"
+	"github.com/techschool/simplebank/util"
 )
 
 func TestTrasferTx(t *testing.T) {
-	testDB, _ := sql.Open(dbDriver, dbSource)
+	config, err := util.LoadConfig("../..")
+	testDB, err := sql.Open(config.DbDriver, config.DbServer)
 	store, _ := NewStore(testDB)
 
 	account1 := createRondomAccount(t)
