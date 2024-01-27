@@ -9,12 +9,14 @@ jobs:
   build:
     name: Build image
     runs-on: ubuntu-latest
-
+    permissions:
+      id-token: write
+      contents: read
     steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::905418267333:role/Go-Kubernetes-gRPC-practice-Role-y3RsBsy5WdJk
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           aws-region: ap-northeast-1
 
       - name: Login to Amazon ECR
