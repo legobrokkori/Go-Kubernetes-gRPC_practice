@@ -5,7 +5,7 @@ package pb;
 import "rpc_create_user.proto";
 import "rpc_login_user.proto";
 
-option go_package = "github.com/techschool/simplebank/pd";
+option go_package = "github.com/legobrokkori/go-kubernetes-grpc_practice/pd";
 
 service SimplaBank {
   rpc CreateUser (CreateUserRequest) returns (CreateUserResponse) { }

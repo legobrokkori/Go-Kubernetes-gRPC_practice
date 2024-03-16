@@ -4,7 +4,7 @@ package pb;
 
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/techschool/simplebank/pd";
+option go_package = "github.com/legobrokkori/go-kubernetes-grpc_practice/pd";
 
 message User {
   string user_name = 1;

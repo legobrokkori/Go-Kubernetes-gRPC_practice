@@ -23,7 +23,7 @@ server:
 	go run main.go
 
 mock:
-	mockgen -package mockdb -destination db/mock/store.go github.com/techschool/simplebank/db/sqlc Store
+	mockgen -package mockdb -destination db/mock/store.go github.com/legobrokkori/go-kubernetes-grpc_practice/db/sqlc Store
 
 proto:
 	rm -f pd/*.go
@@ -31,4 +31,7 @@ proto:
   --go-grpc_out=pb --go-grpc_opt=paths=source_relative \
   proto/*.proto
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock proto
+evans:
+	evans --host localhost --port 9090 -r repl
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test server mock proto evens
