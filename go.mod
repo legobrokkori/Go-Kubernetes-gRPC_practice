@@ -1,4 +1,4 @@
-module github.com/techschool/simplebank
+module github.com/legobrokkori/go-kubernetes-grpc_practice
 
 go 1.20
 

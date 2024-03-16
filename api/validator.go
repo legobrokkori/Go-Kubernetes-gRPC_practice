@@ -2,7 +2,7 @@ package api
 
 import (
 	"github.com/go-playground/validator/v10"
-	"github.com/techschool/simplebank/util"
+	"github.com/legobrokkori/go-kubernetes-grpc_practice/util"
 )
 
 var validCurrency validator.Func = func(fieldLevel validator.FieldLevel) bool {

@@ -10,11 +10,11 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
+	mockdb "github.com/legobrokkori/go-kubernetes-grpc_practice/db/mock"
+	db "github.com/legobrokkori/go-kubernetes-grpc_practice/db/sqlc"
+	"github.com/legobrokkori/go-kubernetes-grpc_practice/token"
+	"github.com/legobrokkori/go-kubernetes-grpc_practice/util"
 	"github.com/stretchr/testify/require"
-	mockdb "github.com/techschool/simplebank/db/mock"
-	db "github.com/techschool/simplebank/db/sqlc"
-	"github.com/techschool/simplebank/token"
-	"github.com/techschool/simplebank/util"
 )
 
 func TestCreateTransfer(t *testing.T) {

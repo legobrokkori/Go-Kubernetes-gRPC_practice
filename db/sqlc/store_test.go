@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
+	"github.com/legobrokkori/go-kubernetes-grpc_practice/util"
 	"github.com/stretchr/testify/require"
-	"github.com/techschool/simplebank/util"
 )
 
 func TestTrasferTx(t *testing.T) {

@@ -7,9 +7,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
+	db "github.com/legobrokkori/go-kubernetes-grpc_practice/db/sqlc"
+	"github.com/legobrokkori/go-kubernetes-grpc_practice/util"
 	"github.com/lib/pq"
-	db "github.com/techschool/simplebank/db/sqlc"
-	"github.com/techschool/simplebank/util"
 )
 
 type createUserRequest struct {

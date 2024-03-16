@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/legobrokkori/go-kubernetes-grpc_practice/util"
 	"github.com/stretchr/testify/require"
-	"github.com/techschool/simplebank/util"
 )
 
 func createRondomUser(t *testing.T) User {

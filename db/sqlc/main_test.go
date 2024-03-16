@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
+	"github.com/legobrokkori/go-kubernetes-grpc_practice/util"
 	_ "github.com/lib/pq"
-	"github.com/techschool/simplebank/util"
 )
 
 var testQueries *Queries
