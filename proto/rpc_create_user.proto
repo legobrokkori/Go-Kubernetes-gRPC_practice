@@ -4,7 +4,7 @@ package pb;
 
 import "user.proto";
 
-option go_package = "github.com/legobrokkori/go-kubernetes-grpc_practice/pd";
+option go_package = "github.com/legobrokkori/go-kubernetes-grpc_practice/pb";
 
 message CreateUserRequest {
   string user_name = 1;

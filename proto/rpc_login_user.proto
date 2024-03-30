@@ -5,7 +5,7 @@ package pb;
 import "user.proto";
 import "google/protobuf/timestamp.proto";
 
-option go_package = "github.com/legobrokkori/go-kubernetes-grpc_practice/pd";
+option go_package = "github.com/legobrokkori/go-kubernetes-grpc_practice/pb";
 
 message LoginUserRequest {
   string user_name = 1;

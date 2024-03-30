@@ -35,7 +35,7 @@ func runGrpcServer(config util.Config, store db.Store) {
 		log.Fatal("cannot create server:", err)
 	}
 	grpcServer := grpc.NewServer()
-	pb.RegisterSimplaBankServer(grpcServer, server)
+	pb.RegisterSimpleBankServer(grpcServer, server)
 	reflection.Register(grpcServer)
 
 	listener, err := net.Listen("tcp", config.GrpcServerAddress)
