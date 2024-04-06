@@ -7,6 +7,9 @@ import (
 	"net"
 	"net/http"
 
+	"github.com/golang-migrate/migrate/v4"
+	_ "github.com/golang-migrate/migrate/v4/database/postgres"
+	_ "github.com/golang-migrate/migrate/v4/source/file"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/legobrokkori/go-kubernetes-grpc_practice/api"
 	db "github.com/legobrokkori/go-kubernetes-grpc_practice/db/sqlc"
@@ -31,9 +34,25 @@ func main() {
 	if err != nil {
 		log.Fatal("cannot connect to db:", err)
 	}
+
+	runDbMigration(config.MigrationURL, config.DbServer)
+
 	store, _ := db.NewStore(conn)
 	go runGatewayServer(config, store)
 	runGrpcServer(config, store)
+}
+
+func runDbMigration(migrationURL string, dbSource string) {
+	migration, err := migrate.New(migrationURL, dbSource)
+	if err != nil {
+		log.Fatal("cannot create  new migrate instance", err)
+	}
+
+	if err = migration.Up(); err != nil && err != migrate.ErrNoChange {
+		log.Fatal("failed to run migration up: ", err)
+	}
+
+	log.Println("db migration successfully")
 }
 
 func runGrpcServer(config util.Config, store db.Store) {
